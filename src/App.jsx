@@ -82,10 +82,10 @@ export default function App() {
   const download = async (kind, setMsg) => {
     const d = (sess.finishedAt || new Date().toISOString()).slice(0, 10);
     try {
-      if (kind === "json") setMsg(await saveFile(`island-of-ikigai-${d}.json`, JSON.stringify(exportData(sess, ai), null, 2), "application/json"));
+      if (kind === "json") setMsg(await saveFile(`island-of-self-exploration-${d}.json`, JSON.stringify(exportData(sess, ai), null, 2), "application/json"));
       else {
         const body = renderToStaticMarkup(<Evidence sess={sess} ai={ai} forFile />);
-        const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evidence report · Island of Ikigai ${VERSION}</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;600;700&family=Space+Mono&display=swap"><style>${cssText} body{background:#7B5CFF}</style></head><body><main class="stage"><div class="page"><h1 class="h2">Evidence report</h1>${body}</div></main></body></html>`;
+        const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Evidence report · Island of Self Exploration ${VERSION}</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;600;700&family=Space+Mono&display=swap"><style>${cssText} body{background:#7B5CFF}</style></head><body><main class="stage"><div class="page"><h1 class="h2">Evidence report</h1>${body}</div></main></body></html>`;
         setMsg(await saveFile(`evidence-report-${d}.html`, html, "text/html"));
       }
     } catch (e) { setMsg(e?.code === "declined" ? "Download cancelled." : "Couldn't save the file here. Use Copy JSON instead."); }
@@ -115,7 +115,7 @@ export default function App() {
       <Backdrop theme={THEME[screen]} />
       <div className="app">
         <header className="top">
-          <button type="button" className="logo" style={{ background: "none", border: 0, cursor: "pointer", padding: 0 }} onClick={() => go("welcome")}>Island of Ikigai</button>
+          <button type="button" className="logo" style={{ background: "none", border: 0, cursor: "pointer", padding: 0 }} onClick={() => go("welcome")}>Island of Self Exploration</button>
           <div className="stars" aria-label="Chapter progress">{[0, 1, 2, 3, 4, 5].map(k => <i key={k} className={star > k ? "done" : star === k ? "now" : ""} />)}</div>
           <div className="tools">
             <button type="button" className={"round " + (snd.sfx ? "on" : "")} aria-pressed={snd.sfx} title="Sound effects" aria-label="Sound effects" onClick={() => { unlockAudio(); setSnd(s => ({ ...s, sfx: !s.sfx })); }}><Icon name={snd.sfx ? "volume-2" : "volume-x"} size={20} /></button>

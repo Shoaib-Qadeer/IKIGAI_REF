@@ -1,4 +1,5 @@
-# Island of Ikigai (prototype v0.2.0)
+<<<<<<< HEAD
+# Island of Self Exploration (prototype v0.2.0)
 
 A story-mode game for students aged 18+ that builds an explainable profile of
 work interests and working style. Kiko the toucan guides players through four
@@ -43,3 +44,6 @@ Or from a terminal: `npx vercel` then `npx vercel --prod`.
 
 Nothing is stored on a server. Sessions stay in the browser until the player
 copies or downloads them. Get consent forms and ethics review before testing with other students.
+=======
+# SELF_EXPLORATION
+>>>>>>> 7024febe7815534760a1fb6306331f41f6eeada4

@@ -4,7 +4,7 @@ import { Big, Guide, Icon, Toucan } from "../components/ui.jsx";
 import { sfx } from "../sound.js";
 import { VERSION } from "../core/content.js";
 
-const TITLE = "Island of Ikigai";
+const TITLE = "Island of Self Exploration";
 const TCOL = ["#FFC93C", "#fff", "#22D3A6", "#fff", "#FFC93C", "#fff"];
 
 export function Welcome({ onStart, onExample }) {
@@ -57,7 +57,7 @@ export function Arrival({ setup, onBoard }) {
       <motion.div className="card pass" initial={{ rotate: -3, y: 60, opacity: 0 }} animate={{ rotate: 0, y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 200, damping: 18 }}>
         <div className="main">
           <div className="row" style={{ justifyContent: "space-between" }}>
-            <span className="mono">BOARDING PASS · ISLAND OF IKIGAI</span><Icon name="ticket" size={26} />
+            <span className="mono">BOARDING PASS · Island of Self Exploration</span><Icon name="ticket" size={26} />
           </div>
           <label className="field">What should I call you? <small>Optional. Never sent to AI.</small>
             <input id="nick" value={s.nickname} onChange={e => setS({ ...s, nickname: e.target.value })} placeholder="e.g. Sana" maxLength={30} />

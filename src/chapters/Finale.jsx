@@ -63,7 +63,7 @@ export function Finale({ sess, react, note, ai, setAi, onRestart, onDownload, ta
     <div className="page">
       {sess.example && <div className="banner">Example map: made-up answers to show what the prototype produces. Not a real person.</div>}
       <span className="kicker">Your island map · prototype {VERSION}</span>
-      <h1 className="h2" style={{ fontSize: "clamp(2.2rem,7vw,4rem)" }}>{nick} Island of Ikigai</h1>
+      <h1 className="h2" style={{ fontSize: "clamp(2.2rem,7vw,4rem)" }}>{nick} Island of Self Exploration</h1>
       <div className="tabs">
         <Pill active={tab === "map"} ariaPressed={tab === "map"} onClick={() => setTab("map")}><Icon name="map" size={18} /> Island map</Pill>
         <Pill active={tab === "evidence"} ariaPressed={tab === "evidence"} onClick={() => setTab("evidence")}><Icon name="file-text" size={18} /> Evidence report</Pill>
@@ -136,7 +136,7 @@ function EvBlock({ id, title, label, statement, children, rule, basis, sess, ope
 }
 
 export function exportData(sess, ai) {
-  return { app: "Island of Ikigai prototype", version: VERSION, example: sess.example, startedAt: sess.startedAt, finishedAt: sess.finishedAt,
+  return { app: "Island of Self Exploration prototype", version: VERSION, example: sess.example, startedAt: sess.startedAt, finishedAt: sess.finishedAt,
     setup: sess.setup, gameA: sess.A.picks, gameB: sess.B.log, gameC: sess.C.results, selfReport: sess.SR.answers, selfReportTimesMs: sess.SR.times,
     profile: sess.profile, reactions: sess.reactions, notes: sess.notes, ai: { enabled: ai.enabled, model: ai.model, systemPrompt: AI_SYSTEM, log: ai.log } };
 }
